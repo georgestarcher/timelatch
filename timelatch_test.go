@@ -52,3 +52,36 @@ func TestIsLatched(t *testing.T) {
 		})
 	}
 }
+
+func TestRunIntegrated(t *testing.T) {
+
+	var testLatch TimeLatch
+	testLatch.SetDefault()
+	testLatch.LatchDuration = 1 * time.Second
+	t.Logf("Test Latch: %v\n", testLatch)
+
+	if !testLatch.IsLatched() {
+		t.Log("Latching")
+		testLatch.Timestamp = time.Now()
+	} else {
+		t.Log("Latched")
+	}
+
+	got := testLatch.IsLatched()
+	expected := true
+
+	if got != expected {
+		t.Errorf("IsLatched Active: Expected %v, got %v\n", expected, got)
+	}
+
+	time.Sleep(2 * time.Second)
+	t.Logf("Now: %v", time.Now())
+
+	got = testLatch.IsLatched()
+	expected = false
+
+	if got != expected {
+		t.Errorf("IsLatched Expired: Expected %v, got %v", expected, got)
+	}
+
+}
