@@ -15,10 +15,42 @@ go get github.com/georgestarcher/timelatch
 
 ## Usage
 
-1. TBD
-
 ```go
 
-	TBD
+	package main
+
+	import (
+		"fmt"
+		"github.com/georgestarcher/timelatch"
+	)
+
+	var testLatch TimeLatch
+	testLatch.SetDefault()
+	testLatch.LatchDuration = 1 * time.Second
+	fmt.Printf"Test Latch: %v\n", testLatch)
+
+	if !testLatch.IsLatched() {
+		fmt.Println("Latching")
+		testLatch.Timestamp = time.Now()
+	} else {
+		fmt.Println"Latched")
+	}
+
+	got := testLatch.IsLatched()
+	expected := true
+
+	if got != expected {
+		fmt.Printf("IsLatched Active: Expected %v, got %v\n", expected, got)
+	}
+
+	time.Sleep(2 * time.Second)
+	fmt.Printf"Now: %v", time.Now())
+
+	got = testLatch.IsLatched()
+	expected = false
+
+	if got != expected {
+		fmt.Printf("IsLatched Expired: Expected %v, got %v", expected, got)
+	}
 
 ```
