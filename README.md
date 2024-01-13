@@ -1,4 +1,4 @@
-# pwhois [![Build Status](https://github.com/georgestarcher/pwhois/workflows/pwhois20CI/badge.svg)](https://github.com/georgestarcher/timelatch/actions)
+# pwhois [![Build Status](https://github.com/georgestarcher/timelatch/workflows/timelatch%20CI/badge.svg)](https://github.com/georgestarcher/timelatch/actions)
 
 A Go (golang) module for a simple time based latching bool flag.
 
