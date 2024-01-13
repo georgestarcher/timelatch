@@ -1,4 +1,4 @@
-# timelatch [![Build Status](https://github.com/georgestarcher/timelatch/workflows/timelatch%20CI/badge.svg)](https://github.com/georgestarcher/timelatch/actions)[![Report Card](https://goreportcard.com/badge/github.com/georgestarcher/timelatch)](https://goreportcard.com/report/github.com/georgestarcher/timelatch)
+# timelatch [![Go Reference](https://pkg.go.dev/badge/github.com/georgestarcher/timelatch.svg)](https://pkg.go.dev/github.com/georgestarcher/timelatch) [![Report Card](https://goreportcard.com/badge/github.com/georgestarcher/timelatch)](https://goreportcard.com/report/github.com/georgestarcher/timelatch) [![Build Status](https://github.com/georgestarcher/timelatch/workflows/timelatch%20CI/badge.svg)](https://github.com/georgestarcher/timelatch/actions)
 
 
 A Go (golang) module for a simple time based latching bool flag.
